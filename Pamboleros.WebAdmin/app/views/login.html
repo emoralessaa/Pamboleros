@@ -1,0 +1,68 @@
+﻿<div class="logo">
+    <img src="content/img/logoLogin.png" class="logo" />
+</div>
+<div class="login-page" data-ng-controller="loginController">
+    <div class="form">
+        <h1 class="h1">Iniciar sesión</h1>
+        <form class="login-form" runat="server">
+            <p class="text-muted text-center">
+                Ingresa tu nombre de usuario y contraseña
+            </p>
+            <input type="text" class="form-control top" placeholder="Nombre de usuario" data-ng-model="loginData.userName" required autofocus>
+            <input type="password" class="form-control bottom" placeholder="Contraseña" data-ng-model="loginData.password" required>
+            <!--<div class="checkbox">
+                <label>
+                    <input type="checkbox"> Recordar
+                </label>
+            </div>-->
+            <button class="btn-login btn-lg-login btn-primary-login btn-block-login" type="submit" data-ng-click="login()">Login</button>
+            <button class="btn-login btn-lg-login btn-primary-login btn-block-login labelButton" type="submit" data-ng-click="forgot()">¿Olvidaste tu contraseña?</button>
+        </form>
+        <div data-ng-hide="message == ''" class="alert alert-danger">
+            {{message}}
+        </div>
+    </div>
+</div>
+
+
+<!--<div class="form-signin">
+    <div class="text-center">
+        <img src="content/img/logo.png" alt="Metis Logo">
+    </div>
+    <hr>
+    <div class="tab-content">
+        <div id="login" class="tab-pane active">
+            <form class="form-login" role="form">
+                <p class="text-muted text-center">
+                    Ingresa tu nombre de usuario y contraseña
+                </p>
+                <input type="text" class="form-control top" placeholder="Username" data-ng-model="loginData.userName" required autofocus>
+                <input type="password" class="form-control bottom" placeholder="Password" data-ng-model="loginData.password" required>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Recordar
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" data-ng-click="login()">Login</button>
+                <div data-ng-hide="message == ''" class="alert alert-danger">
+                    {{message}}
+                </div>
+            </form>
+        </div>
+        <div id="forgot" class="tab-pane">
+            <form role="form">
+                <p class="text-muted text-center">Ingresa un correo válido</p>
+                <input type="email" placeholder="correo@dominio.com" class="form-control">
+                <br>
+                <button class="btn btn-lg btn-danger btn-block" type="submit" data-ng-click="forgot()">Recuperar contraseña</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <div class="text-center">
+        <ul class="list-inline">
+            <li><a class="text-muted" href="#login" data-toggle="tab">Iniciar sesión</a></li>
+            <li><a class="text-muted" href="#forgot" data-toggle="tab">¿Olvidaste tu contraseña?</a></li>
+        </ul>
+    </div>
+</div>-->

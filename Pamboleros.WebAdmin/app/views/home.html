@@ -1,0 +1,139 @@
+﻿<div class="bg-dark dk" id="wrap" data-ng-controller="homeController">
+    <div id="top">
+        <!-- .navbar -->
+        <nav data-ng-hide="!authentication.isAuth" class="navbar navbar-inverse navbar-static-top" data-ng-controller="homeController">
+            <div class="container-fluid">
+
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <header class="navbar-header">
+                    <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>-->
+                    <img src="content/img/logo.png" alt="Logo">
+                </header>
+
+                <div class="topnav">
+                    <!--<div class="btn-group">
+                        <a data-placement="bottom" data-original-title="Fullscreen" data-toggle="tooltip"
+                           class="btn btn-default btn-sm" id="toggleFullScreen">
+                            <i class="glyphicon glyphicon-fullscreen"></i>
+                        </a>
+                    </div>
+                    <div class="btn-group">
+                        <a data-placement="bottom" data-original-title="E-mail" data-toggle="tooltip"
+                           class="btn btn-default btn-sm">
+                            <i class="fa fa-envelope"></i>
+                            <span class="label label-warning">5</span>
+                        </a>
+                        <a data-toggle="modal" data-original-title="Help" data-placement="bottom"
+                           class="btn btn-default btn-sm"
+                           href="#helpModal">
+                            <i class="fa fa-question"></i>
+                        </a>
+                    </div>-->
+                    <div class="btn-group">
+                        <a data-toggle="tooltip" data-original-title="Logout" data-placement="bottom" class="btn btn-metis-1 btn-sm" href="" data-ng-click="logOut()">
+                            <i class="fa fa-power-off"></i>
+                        </a>
+                    </div>
+                    <div class="btn-group">
+                        <a data-placement="bottom" data-original-title="Show / Hide Left" data-toggle="tooltip"
+                           class="btn btn-primary btn-sm toggle-left" id="menu-toggle">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+                    <!-- .nav -->
+                    <!--<ul class="nav navbar-nav">
+                    <li data-ng-hide="!authentication.isAuth"><a href="#">Welcome {{authentication.userName}}</a></li>-->
+                    <!--<li class='dropdown '>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Form Elements <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="form-general.html">General</a></li>
+                            <li><a href="form-validation.html">Validation</a></li>
+                            <li><a href="form-wysiwyg.html">WYSIWYG</a></li>
+                            <li><a href="form-wizard.html">Wizard &amp; File Upload</a></li>
+                        </ul>
+                    </li>-->
+                    <!--</ul>-->
+                    <!-- /.nav -->
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <!-- /.navbar -->
+        <header class="head">
+            <div class="main-bar">
+                <h3>
+                    <i class="fa fa-home"></i>&nbsp;
+                    <!--Barra gris superior... aqui poner la página en la que se encuentra-->
+                </h3>
+            </div>
+            <!-- /.main-bar -->
+        </header>
+        <!-- /.head -->
+    </div>
+    <!-- /#top -->
+    <!-- /#left begins -->
+    <nav data-ng-hide="!authentication.isAuth">
+        <div id="left">
+            <div class="media user-media bg-dark dker">
+                <div class="user-media-toggleHover">
+                    <span class="fa fa-user"></span>
+                </div>
+                <div class="user-wrapper bg-dark">
+                    <a class="user-link" href="">
+                        <img class="media-object img-thumbnail user-img" alt="User Picture" src="content/img/user.gif">
+                        <span class="label label-danger user-label">16</span>
+                    </a>
+
+                    <div class="media-body">
+                        <h5 class="media-heading">{{authentication.userName}}</h5>
+                        <ul class="list-unstyled user-info">
+                            <li><a href="">aqui va el rol</a></li>
+                            <li>
+                                Last Access : <br>
+                                <small><i class="fa fa-calendar"></i>&nbsp;{{authentication.actualDate}}</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <nav id="menu" ng-include="menuTemplate.url" ng-controller="menuController">
+                </nav>
+            </div>
+            
+        </div>
+    </nav>
+    <!-- /#left -->
+    <!-- /#content begins -->
+    <div id="content">
+        <div class="outer">
+            <div class="inner bg-light lter">
+                <div class="col-lg-12">
+                    <div ng-include="pageTemplate.url">
+                    </div>
+                </div>
+            </div>
+            <!-- /.inner -->
+        </div>
+        <!-- /.outer -->
+    </div>
+    <!-- /#content -->
+</div>
+
+<footer class="Footer bg-dark dker">
+    <p>Todos los derechos reservados. 2018 &copy; - Pamboleros v18.1.1</p>
+</footer>
+
+

@@ -1,0 +1,767 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DE765EE4-9F9C-4D6A-AFBF-FB6986299E9E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pamboleros.Web</RootNamespace>
+    <AssemblyName>Pamboleros.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="content\css\Login.css" />
+    <Content Include="content\img\bgLogin.jpg" />
+    <Content Include="content\img\logoLogin.png" />
+    <Content Include="content\img\pattern\README.md" />
+    <Content Include="content\less\theme.less" />
+    <Content Include="content\lib\bootstrap-daterangepicker\bower.json" />
+    <Content Include="content\lib\bootstrap-daterangepicker\package.json" />
+    <Content Include="content\lib\bootstrap-daterangepicker\README.md" />
+    <Content Include="content\lib\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="content\lib\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="content\lib\bootstrap\css\bootstrap.css.map" />
+    <Content Include="content\lib\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="content\lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="content\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="content\lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="content\lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="content\lib\font-awesome\css\font-awesome.css.map" />
+    <Content Include="content\lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="content\lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="content\lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="content\lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="content\lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="content\lib\formwizard\README.md" />
+    <Content Include="content\lib\jquery.gritter\bower.json" />
+    <Content Include="content\lib\jquery.gritter\package.json" />
+    <Content Include="content\lib\jquery.gritter\README.markdown" />
+    <Content Include="content\lib\jquery\jquery.min.map" />
+    <Content Include="content\lib\metismenu\metisMenu.js.map" />
+    <Content Include="content\lib\pagedown-bootstrap\less\jquery.pagedown-bootstrap.less" />
+    <Content Include="content\lib\pagedown-bootstrap\README.md" />
+    <Content Include="content\lib\plupload\js\Moxie.xap" />
+    <Content Include="content\lib\plupload\readme.md" />
+    <Content Include="content\lib\validVal\bower.json" />
+    <Content Include="content\lib\validVal\README.md" />
+    <Content Include="content\lib\validVal\validVal.jquery.json" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\app.js" />
+    <Content Include="app\controllers\homeController.js" />
+    <Content Include="app\controllers\indexController.js" />
+    <Content Include="app\controllers\loginController.js" />
+    <Content Include="app\controllers\menuController.js" />
+    <Content Include="app\controllers\signupController.js" />
+    <Content Include="app\services\authInterceptorService.js" />
+    <Content Include="app\services\authService.js" />
+    <Content Include="app\services\menuService.js" />
+    <Content Include="app\views\home.html" />
+    <Content Include="app\views\menu.html" />
+    <Content Include="app\views\signup.html" />
+    <Content Include="content\css\countdown.css" />
+    <Content Include="content\css\loading-bar.css" />
+    <Content Include="content\css\loading-bar.min.css" />
+    <Content Include="content\css\main.css" />
+    <Content Include="content\css\main.min.css" />
+    <Content Include="content\css\main.rtl.css" />
+    <Content Include="content\css\main.rtl.min.css" />
+    <Content Include="content\css\style-switcher.css" />
+    <Content Include="content\css\style-switcher.min.css" />
+    <Content Include="content\css\theme.css" />
+    <Content Include="content\css\theme.min.css" />
+    <Content Include="content\img\cp.png" />
+    <Content Include="content\img\logo.png" />
+    <Content Include="content\img\metis-tile.png" />
+    <Content Include="content\img\pattern\always_grey.png" />
+    <Content Include="content\img\pattern\arches.png" />
+    <Content Include="content\img\pattern\batthern.png" />
+    <Content Include="content\img\pattern\bo_play_pattern.png" />
+    <Content Include="content\img\pattern\brillant.png" />
+    <Content Include="content\img\pattern\carbon_fibre.png" />
+    <Content Include="content\img\pattern\cartographer.png" />
+    <Content Include="content\img\pattern\crissXcross.png" />
+    <Content Include="content\img\pattern\diagonal_striped_brick.png" />
+    <Content Include="content\img\pattern\diamond_upholstery.png" />
+    <Content Include="content\img\pattern\egg_shell.png" />
+    <Content Include="content\img\pattern\gplaypattern.png" />
+    <Content Include="content\img\pattern\greyfloral.png" />
+    <Content Include="content\img\pattern\irongrip.png" />
+    <Content Include="content\img\pattern\large_leather.png" />
+    <Content Include="content\img\pattern\low_contrast_linen.png" />
+    <Content Include="content\img\pattern\noisy_grid.png" />
+    <Content Include="content\img\pattern\pool_table.png" />
+    <Content Include="content\img\pattern\purty_wood.png" />
+    <Content Include="content\img\pattern\random_grey_variations.png" />
+    <Content Include="content\img\pattern\retina_wood.png" />
+    <Content Include="content\img\pattern\rip_jobs.png" />
+    <Content Include="content\img\pattern\white_tiles.png" />
+    <Content Include="content\img\pattern\wood_1.png" />
+    <Content Include="content\img\user.gif" />
+    <Content Include="content\js\app.js" />
+    <Content Include="content\js\app.min.js" />
+    <Content Include="content\js\core.js" />
+    <Content Include="content\js\core.min.js" />
+    <Content Include="content\js\countdown.js" />
+    <Content Include="content\js\style-switcher.js" />
+    <Content Include="content\lib\animate.css\animate.css" />
+    <Content Include="content\lib\animate.css\animate.min.css" />
+    <Content Include="content\lib\bootstrap-daterangepicker\daterangepicker-bs2.css" />
+    <Content Include="content\lib\bootstrap-daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="content\lib\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="content\lib\bootstrap-daterangepicker\examples.html" />
+    <Content Include="content\lib\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="content\lib\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="content\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="content\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="content\lib\bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="content\lib\bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="content\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="content\lib\bootstrap\js\bootstrap.js" />
+    <Content Include="content\lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="content\lib\bootstrap\js\npm.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ac.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ad.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ae.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.af.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ag.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ai.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.al.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.am.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ao.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ar.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.as.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.at.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.au.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.aw.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ax.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.az.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ba.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.bb.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.bd.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.be.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.bf.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.bg.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.bh.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.bi.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.bj.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.bl.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.bm.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.bn.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.bo.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.bq.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.br.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.bs.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.bt.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.bw.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.by.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.bz.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ca.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.cc.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.cd.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.cf.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.cg.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ch.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ci.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ck.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.cl.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.cm.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.cn.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.co.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.cr.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.cu.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.cv.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.cw.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.cx.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.cy.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.cz.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.de.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.dj.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.dk.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.dm.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.do.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.dz.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ec.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ee.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.eg.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.eh.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.er.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.es.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.et.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.fi.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.fj.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.fk.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.fm.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.fo.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.fr.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ga.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.gb.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.gd.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ge.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.gf.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.gg.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.gh.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.gi.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.gl.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.gm.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.gn.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.gp.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.gq.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.gr.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.gt.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.gu.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.gw.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.gy.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.hk.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.hn.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.hr.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ht.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.hu.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.i18n.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.id.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ie.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.il.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.im.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.in.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.io.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.iq.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ir.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.is.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.it.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.je.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.jm.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.jo.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.jp.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ke.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.kg.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.kh.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ki.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.km.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.kn.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.kp.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.kr.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.kw.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ky.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.kz.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.la.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.lb.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.lc.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.li.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.lk.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.lr.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ls.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.lt.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.lu.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.lv.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ly.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ma.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.mc.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.md.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.me.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.mf.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.mg.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.mh.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.mk.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ml.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.mm.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.mn.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.mo.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.mp.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.mq.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.mr.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ms.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.mt.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.mu.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.mv.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.mw.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.mx.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.my.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.mz.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.na.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.nc.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ne.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.nf.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ng.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ni.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.nl.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.no.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.np.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.nr.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.nu.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.nz.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.om.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.pa.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.pe.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.pf.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.pg.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ph.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.pk.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.pl.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.pm.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.pr.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ps.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.pt.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.pw.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.py.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.qa.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.re.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ro.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.rs.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ru.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.rw.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.sa.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.sb.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.sc.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.sd.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.se.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.sg.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.sh.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.si.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.sj.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.sk.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.sl.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.sm.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.sn.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.so.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.sr.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ss.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.st.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.sv.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.sx.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.sy.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.sz.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ta.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.tc.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.td.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.tg.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.th.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.tj.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.tk.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.tl.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.tm.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.tn.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.to.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.tr.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.tt.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.tv.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.tw.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.tz.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ua.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ug.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.us.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.uy.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.uz.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.va.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.vc.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ve.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.vg.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.vi.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.vn.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.vu.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.wf.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ws.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.ye.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.yt.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.za.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.zm.js" />
+    <Content Include="content\lib\cleave.js\addons\cleave-phone.zw.js" />
+    <Content Include="content\lib\cleave.js\cleave-angular.js" />
+    <Content Include="content\lib\cleave.js\cleave-angular.min.js" />
+    <Content Include="content\lib\cleave.js\cleave-react.js" />
+    <Content Include="content\lib\cleave.js\cleave-react.min.js" />
+    <Content Include="content\lib\cleave.js\cleave.js" />
+    <Content Include="content\lib\cleave.js\cleave.min.js" />
+    <Content Include="content\lib\clipboard\clipboard.js" />
+    <Content Include="content\lib\clipboard\clipboard.min.js" />
+    <Content Include="content\lib\font-awesome\css\font-awesome.css" />
+    <Content Include="content\lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="content\lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="content\lib\formwizard\changelog.txt" />
+    <Content Include="content\lib\formwizard\examples\css\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="content\lib\formwizard\examples\css\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="content\lib\formwizard\examples\css\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="content\lib\formwizard\examples\css\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="content\lib\formwizard\examples\css\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="content\lib\formwizard\examples\css\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="content\lib\formwizard\examples\css\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="content\lib\formwizard\examples\css\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="content\lib\formwizard\examples\css\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="content\lib\formwizard\examples\css\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="content\lib\formwizard\examples\css\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="content\lib\formwizard\examples\css\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="content\lib\formwizard\examples\css\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="content\lib\formwizard\examples\css\base\jquery.ui.all.css" />
+    <Content Include="content\lib\formwizard\examples\css\base\jquery.ui.base.css" />
+    <Content Include="content\lib\formwizard\examples\css\base\jquery.ui.core.css" />
+    <Content Include="content\lib\formwizard\examples\css\base\jquery.ui.theme.css" />
+    <Content Include="content\lib\formwizard\examples\css\ui-lightness\images\ui-anim_basic_16x16.gif" />
+    <Content Include="content\lib\formwizard\examples\css\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="content\lib\formwizard\examples\css\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="content\lib\formwizard\examples\css\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="content\lib\formwizard\examples\css\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="content\lib\formwizard\examples\css\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="content\lib\formwizard\examples\css\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="content\lib\formwizard\examples\css\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="content\lib\formwizard\examples\css\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="content\lib\formwizard\examples\css\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="content\lib\formwizard\examples\css\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="content\lib\formwizard\examples\css\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="content\lib\formwizard\examples\css\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="content\lib\formwizard\examples\css\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="content\lib\formwizard\examples\css\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="content\lib\formwizard\examples\css\ui-lightness\jquery-ui-1.8.2.custom.css" />
+    <Content Include="content\lib\formwizard\examples\example_10_custom_validation_initialization.html" />
+    <Content Include="content\lib\formwizard\examples\example_11_changing_options_after_initialization.html" />
+    <Content Include="content\lib\formwizard\examples\example_12_using_remoteAjax_for_all_steps.html" />
+    <Content Include="content\lib\formwizard\examples\example_13_nested_routes.html" />
+    <Content Include="content\lib\formwizard\examples\example_14_using_fieldset_as_step_identifier.html" />
+    <Content Include="content\lib\formwizard\examples\example_15_add_and_remove_steps_dynamically.html" />
+    <Content Include="content\lib\formwizard\examples\example_16_have_the_wizard_ignore_specific_inputs_during_transition.html" />
+    <Content Include="content\lib\formwizard\examples\example_17_cancel_the_submit_in_using_beforeSubmit_beforeSend_and_beforeSerialize_callbacks.html" />
+    <Content Include="content\lib\formwizard\examples\example_18_disable_jquery_ui_styles_using_disableUIStyles.html" />
+    <Content Include="content\lib\formwizard\examples\example_19_summary_page.html" />
+    <Content Include="content\lib\formwizard\examples\example_1_straight.html" />
+    <Content Include="content\lib\formwizard\examples\example_20_submit_form_without_ajax.html" />
+    <Content Include="content\lib\formwizard\examples\example_21_add_steps_using_update_steps_method.html" />
+    <Content Include="content\lib\formwizard\examples\example_22_before_step_shown_event.html" />
+    <Content Include="content\lib\formwizard\examples\example_2_branch.html" />
+    <Content Include="content\lib\formwizard\examples\example_3_bbq_integration_history_handling.html" />
+    <Content Include="content\lib\formwizard\examples\example_4_step_shown_event.html" />
+    <Content Include="content\lib\formwizard\examples\example_5_methods.html" />
+    <Content Include="content\lib\formwizard\examples\example_6_remoteAjax_and_events.html" />
+    <Content Include="content\lib\formwizard\examples\example_7_transition_animation.html" />
+    <Content Include="content\lib\formwizard\examples\example_8_multiple_wizards.html" />
+    <Content Include="content\lib\formwizard\examples\example_9_branching_using_checkbox_radiobutton_hidden_.html" />
+    <Content Include="content\lib\formwizard\examples\json.html" />
+    <Content Include="content\lib\formwizard\examples\normal_submit.html" />
+    <Content Include="content\lib\formwizard\examples\store_in_database.html" />
+    <Content Include="content\lib\formwizard\examples\validate.html" />
+    <Content Include="content\lib\formwizard\js\bbq.js" />
+    <Content Include="content\lib\formwizard\js\jquery-1.4.2.min.js" />
+    <Content Include="content\lib\formwizard\js\jquery-ui-1.8.5.custom.min.js" />
+    <Content Include="content\lib\formwizard\js\jquery.form.js" />
+    <Content Include="content\lib\formwizard\js\jquery.form.wizard.js" />
+    <Content Include="content\lib\formwizard\js\jquery.validate.js" />
+    <Content Include="content\lib\fullcalendar\fullcalendar.css" />
+    <Content Include="content\lib\fullcalendar\fullcalendar.js" />
+    <Content Include="content\lib\fullcalendar\fullcalendar.min.css" />
+    <Content Include="content\lib\fullcalendar\fullcalendar.min.js" />
+    <Content Include="content\lib\fullcalendar\fullcalendar.print.css" />
+    <Content Include="content\lib\fullcalendar\fullcalendar.print.min.css" />
+    <Content Include="content\lib\fullcalendar\gcal.js" />
+    <Content Include="content\lib\fullcalendar\gcal.min.js" />
+    <Content Include="content\lib\fullcalendar\locale-all.js" />
+    <Content Include="content\lib\fullcalendar\locale\af.js" />
+    <Content Include="content\lib\fullcalendar\locale\ar-dz.js" />
+    <Content Include="content\lib\fullcalendar\locale\ar-ly.js" />
+    <Content Include="content\lib\fullcalendar\locale\ar-ma.js" />
+    <Content Include="content\lib\fullcalendar\locale\ar-sa.js" />
+    <Content Include="content\lib\fullcalendar\locale\ar-tn.js" />
+    <Content Include="content\lib\fullcalendar\locale\ar.js" />
+    <Content Include="content\lib\fullcalendar\locale\bg.js" />
+    <Content Include="content\lib\fullcalendar\locale\ca.js" />
+    <Content Include="content\lib\fullcalendar\locale\cs.js" />
+    <Content Include="content\lib\fullcalendar\locale\da.js" />
+    <Content Include="content\lib\fullcalendar\locale\de-at.js" />
+    <Content Include="content\lib\fullcalendar\locale\de.js" />
+    <Content Include="content\lib\fullcalendar\locale\el.js" />
+    <Content Include="content\lib\fullcalendar\locale\en-au.js" />
+    <Content Include="content\lib\fullcalendar\locale\en-ca.js" />
+    <Content Include="content\lib\fullcalendar\locale\en-gb.js" />
+    <Content Include="content\lib\fullcalendar\locale\en-ie.js" />
+    <Content Include="content\lib\fullcalendar\locale\en-nz.js" />
+    <Content Include="content\lib\fullcalendar\locale\es-do.js" />
+    <Content Include="content\lib\fullcalendar\locale\es.js" />
+    <Content Include="content\lib\fullcalendar\locale\eu.js" />
+    <Content Include="content\lib\fullcalendar\locale\fa.js" />
+    <Content Include="content\lib\fullcalendar\locale\fi.js" />
+    <Content Include="content\lib\fullcalendar\locale\fr-ca.js" />
+    <Content Include="content\lib\fullcalendar\locale\fr-ch.js" />
+    <Content Include="content\lib\fullcalendar\locale\fr.js" />
+    <Content Include="content\lib\fullcalendar\locale\gl.js" />
+    <Content Include="content\lib\fullcalendar\locale\he.js" />
+    <Content Include="content\lib\fullcalendar\locale\hi.js" />
+    <Content Include="content\lib\fullcalendar\locale\hr.js" />
+    <Content Include="content\lib\fullcalendar\locale\hu.js" />
+    <Content Include="content\lib\fullcalendar\locale\id.js" />
+    <Content Include="content\lib\fullcalendar\locale\is.js" />
+    <Content Include="content\lib\fullcalendar\locale\it.js" />
+    <Content Include="content\lib\fullcalendar\locale\ja.js" />
+    <Content Include="content\lib\fullcalendar\locale\kk.js" />
+    <Content Include="content\lib\fullcalendar\locale\ko.js" />
+    <Content Include="content\lib\fullcalendar\locale\lb.js" />
+    <Content Include="content\lib\fullcalendar\locale\lt.js" />
+    <Content Include="content\lib\fullcalendar\locale\lv.js" />
+    <Content Include="content\lib\fullcalendar\locale\mk.js" />
+    <Content Include="content\lib\fullcalendar\locale\ms-my.js" />
+    <Content Include="content\lib\fullcalendar\locale\ms.js" />
+    <Content Include="content\lib\fullcalendar\locale\nb.js" />
+    <Content Include="content\lib\fullcalendar\locale\nl-be.js" />
+    <Content Include="content\lib\fullcalendar\locale\nl.js" />
+    <Content Include="content\lib\fullcalendar\locale\nn.js" />
+    <Content Include="content\lib\fullcalendar\locale\pl.js" />
+    <Content Include="content\lib\fullcalendar\locale\pt-br.js" />
+    <Content Include="content\lib\fullcalendar\locale\pt.js" />
+    <Content Include="content\lib\fullcalendar\locale\ro.js" />
+    <Content Include="content\lib\fullcalendar\locale\ru.js" />
+    <Content Include="content\lib\fullcalendar\locale\sk.js" />
+    <Content Include="content\lib\fullcalendar\locale\sl.js" />
+    <Content Include="content\lib\fullcalendar\locale\sr-cyrl.js" />
+    <Content Include="content\lib\fullcalendar\locale\sr.js" />
+    <Content Include="content\lib\fullcalendar\locale\sv.js" />
+    <Content Include="content\lib\fullcalendar\locale\th.js" />
+    <Content Include="content\lib\fullcalendar\locale\tr.js" />
+    <Content Include="content\lib\fullcalendar\locale\uk.js" />
+    <Content Include="content\lib\fullcalendar\locale\vi.js" />
+    <Content Include="content\lib\fullcalendar\locale\zh-cn.js" />
+    <Content Include="content\lib\fullcalendar\locale\zh-tw.js" />
+    <Content Include="content\lib\gmaps\gmaps.js" />
+    <Content Include="content\lib\gmaps\gmaps.min.js" />
+    <Content Include="content\lib\inputlimiter\jquery.inputlimiter.css" />
+    <Content Include="content\lib\inputlimiter\jquery.inputlimiter.js" />
+    <Content Include="content\lib\jquery-validation\additional-methods.js" />
+    <Content Include="content\lib\jquery-validation\jquery.validate.js" />
+    <Content Include="content\lib\jquery-validation\jquery.validate.min.js" />
+    <Content Include="content\lib\jquery.gritter\css\jquery.gritter.css" />
+    <Content Include="content\lib\jquery.gritter\images\gritter-light.png" />
+    <Content Include="content\lib\jquery.gritter\images\gritter-long.png" />
+    <Content Include="content\lib\jquery.gritter\images\gritter.png" />
+    <Content Include="content\lib\jquery.gritter\images\ie-spacer.gif" />
+    <Content Include="content\lib\jquery.gritter\images\trees.jpg" />
+    <Content Include="content\lib\jquery.gritter\index.html" />
+    <Content Include="content\lib\jquery.gritter\js\jquery.gritter.js" />
+    <Content Include="content\lib\jquery.gritter\js\jquery.gritter.min.js" />
+    <Content Include="content\lib\jquery\jquery.js" />
+    <Content Include="content\lib\jquery\jquery.min.js" />
+    <Content Include="content\lib\metismenu\metisMenu.css" />
+    <Content Include="content\lib\metismenu\metisMenu.js" />
+    <Content Include="content\lib\metismenu\metisMenu.min.css" />
+    <Content Include="content\lib\metismenu\metisMenu.min.js" />
+    <Content Include="content\lib\moment\locales.js" />
+    <Content Include="content\lib\moment\locales.min.js" />
+    <Content Include="content\lib\moment\moment-with-locales.js" />
+    <Content Include="content\lib\moment\moment-with-locales.min.js" />
+    <Content Include="content\lib\moment\moment.min.js" />
+    <Content Include="content\lib\noty\jquery.noty.packaged.js" />
+    <Content Include="content\lib\noty\jquery.noty.packaged.min.js" />
+    <Content Include="content\lib\onoffcanvas\onoffcanvas.css" />
+    <Content Include="content\lib\onoffcanvas\onoffcanvas.js" />
+    <Content Include="content\lib\onoffcanvas\onoffcanvas.min.css" />
+    <Content Include="content\lib\onoffcanvas\onoffcanvas.min.js" />
+    <Content Include="content\lib\pagedown-bootstrap\css\jquery.pagedown-bootstrap.css" />
+    <Content Include="content\lib\pagedown-bootstrap\demo\index.html" />
+    <Content Include="content\lib\pagedown-bootstrap\js\jquery.pagedown-bootstrap.combined.js" />
+    <Content Include="content\lib\pagedown-bootstrap\js\jquery.pagedown-bootstrap.combined.min.js" />
+    <Content Include="content\lib\pagedown-bootstrap\js\jquery.pagedown-bootstrap.js" />
+    <Content Include="content\lib\pagedown-bootstrap\js\Markdown.Converter.js" />
+    <Content Include="content\lib\pagedown-bootstrap\js\Markdown.Editor.js" />
+    <Content Include="content\lib\pagedown-bootstrap\js\Markdown.Sanitizer.js" />
+    <Content Include="content\lib\pagedown-bootstrap\LICENSE.txt" />
+    <Content Include="content\lib\plupload\examples\custom.html" />
+    <Content Include="content\lib\plupload\examples\dump.php" />
+    <Content Include="content\lib\plupload\examples\events.html" />
+    <Content Include="content\lib\plupload\examples\jquery\all_runtimes.html" />
+    <Content Include="content\lib\plupload\examples\jquery\jquery_ui_widget.html" />
+    <Content Include="content\lib\plupload\examples\jquery\queue_widget.html" />
+    <Content Include="content\lib\plupload\examples\jquery\s3.php" />
+    <Content Include="content\lib\plupload\examples\upload.php" />
+    <Content Include="content\lib\plupload\js\i18n\ar.js" />
+    <Content Include="content\lib\plupload\js\i18n\az.js" />
+    <Content Include="content\lib\plupload\js\i18n\bs.js" />
+    <Content Include="content\lib\plupload\js\i18n\cs.js" />
+    <Content Include="content\lib\plupload\js\i18n\cy.js" />
+    <Content Include="content\lib\plupload\js\i18n\da.js" />
+    <Content Include="content\lib\plupload\js\i18n\de.js" />
+    <Content Include="content\lib\plupload\js\i18n\el.js" />
+    <Content Include="content\lib\plupload\js\i18n\en.js" />
+    <Content Include="content\lib\plupload\js\i18n\es.js" />
+    <Content Include="content\lib\plupload\js\i18n\et.js" />
+    <Content Include="content\lib\plupload\js\i18n\fa.js" />
+    <Content Include="content\lib\plupload\js\i18n\fi.js" />
+    <Content Include="content\lib\plupload\js\i18n\fr.js" />
+    <Content Include="content\lib\plupload\js\i18n\he.js" />
+    <Content Include="content\lib\plupload\js\i18n\hr.js" />
+    <Content Include="content\lib\plupload\js\i18n\hu.js" />
+    <Content Include="content\lib\plupload\js\i18n\hy.js" />
+    <Content Include="content\lib\plupload\js\i18n\id.js" />
+    <Content Include="content\lib\plupload\js\i18n\it.js" />
+    <Content Include="content\lib\plupload\js\i18n\ja.js" />
+    <Content Include="content\lib\plupload\js\i18n\ka.js" />
+    <Content Include="content\lib\plupload\js\i18n\kk.js" />
+    <Content Include="content\lib\plupload\js\i18n\km.js" />
+    <Content Include="content\lib\plupload\js\i18n\ko.js" />
+    <Content Include="content\lib\plupload\js\i18n\lt.js" />
+    <Content Include="content\lib\plupload\js\i18n\lv.js" />
+    <Content Include="content\lib\plupload\js\i18n\mn.js" />
+    <Content Include="content\lib\plupload\js\i18n\ms.js" />
+    <Content Include="content\lib\plupload\js\i18n\nl.js" />
+    <Content Include="content\lib\plupload\js\i18n\pl.js" />
+    <Content Include="content\lib\plupload\js\i18n\pt_BR.js" />
+    <Content Include="content\lib\plupload\js\i18n\ro.js" />
+    <Content Include="content\lib\plupload\js\i18n\ru.js" />
+    <Content Include="content\lib\plupload\js\i18n\sk.js" />
+    <Content Include="content\lib\plupload\js\i18n\sq.js" />
+    <Content Include="content\lib\plupload\js\i18n\sr.js" />
+    <Content Include="content\lib\plupload\js\i18n\sr_RS.js" />
+    <Content Include="content\lib\plupload\js\i18n\sv.js" />
+    <Content Include="content\lib\plupload\js\i18n\th_TH.js" />
+    <Content Include="content\lib\plupload\js\i18n\tr.js" />
+    <Content Include="content\lib\plupload\js\i18n\uk_UA.js" />
+    <Content Include="content\lib\plupload\js\i18n\zh_CN.js" />
+    <Content Include="content\lib\plupload\js\i18n\zh_TW.js" />
+    <Content Include="content\lib\plupload\js\jquery.plupload.queue\css\jquery.plupload.queue.css" />
+    <Content Include="content\lib\plupload\js\jquery.plupload.queue\img\backgrounds.gif" />
+    <Content Include="content\lib\plupload\js\jquery.plupload.queue\img\buttons-disabled.png" />
+    <Content Include="content\lib\plupload\js\jquery.plupload.queue\img\buttons.png" />
+    <Content Include="content\lib\plupload\js\jquery.plupload.queue\img\delete.gif" />
+    <Content Include="content\lib\plupload\js\jquery.plupload.queue\img\done.gif" />
+    <Content Include="content\lib\plupload\js\jquery.plupload.queue\img\error.gif" />
+    <Content Include="content\lib\plupload\js\jquery.plupload.queue\img\throbber.gif" />
+    <Content Include="content\lib\plupload\js\jquery.plupload.queue\img\transp50.png" />
+    <Content Include="content\lib\plupload\js\jquery.plupload.queue\jquery.plupload.queue.js" />
+    <Content Include="content\lib\plupload\js\jquery.plupload.queue\jquery.plupload.queue.min.js" />
+    <Content Include="content\lib\plupload\js\jquery.ui.plupload\css\jquery.ui.plupload.css" />
+    <Content Include="content\lib\plupload\js\jquery.ui.plupload\img\loading.gif" />
+    <Content Include="content\lib\plupload\js\jquery.ui.plupload\img\plupload.png" />
+    <Content Include="content\lib\plupload\js\jquery.ui.plupload\jquery.ui.plupload.js" />
+    <Content Include="content\lib\plupload\js\jquery.ui.plupload\jquery.ui.plupload.min.js" />
+    <Content Include="content\lib\plupload\js\moxie.js" />
+    <Content Include="content\lib\plupload\js\moxie.min.js" />
+    <Content Include="content\lib\plupload\js\Moxie.swf" />
+    <Content Include="content\lib\plupload\js\plupload.dev.js" />
+    <Content Include="content\lib\plupload\js\plupload.full.min.js" />
+    <Content Include="content\lib\plupload\js\plupload.min.js" />
+    <Content Include="content\lib\plupload\license.txt" />
+    <Content Include="content\lib\screenfull\screenfull.js" />
+    <Content Include="content\lib\timepicker\css\bootstrap-responsive.css" />
+    <Content Include="content\lib\timepicker\css\bootstrap-timepicker.css" />
+    <Content Include="content\lib\timepicker\css\bootstrap-timepicker.min.css" />
+    <Content Include="content\lib\timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="content\lib\timepicker\js\bootstrap-timepicker.min.js" />
+    <Content Include="content\lib\validVal\index.html" />
+    <Content Include="content\lib\validVal\js\jquery.validVal-customValidations.js" />
+    <Content Include="content\lib\validVal\js\jquery.validVal-debugger.js" />
+    <Content Include="content\lib\validVal\js\jquery.validVal.js" />
+    <Content Include="content\lib\validVal\js\jquery.validVal.min.js" />
+    <Content Include="content\lib\validVal\serverside-validations\index.html" />
+    <Content Include="content\lib\validVal\serverside-validations\validations.php" />
+    <Content Include="content\ui-bootstrap-csp.css" />
+    <Content Include="index.html" />
+    <Content Include="app\views\login.html" />
+    <Content Include="scripts\angular-local-storage.min.js" />
+    <Content Include="scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="scripts\angular-ui\ui-bootstrap.min.js" />
+    <Content Include="scripts\authComplete.js" />
+    <Content Include="scripts\loading-bar.js" />
+    <Content Include="scripts\loading-bar.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65061</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:65055/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

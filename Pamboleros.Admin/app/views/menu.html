@@ -1,0 +1,20 @@
+﻿<header class="major">
+    <h2>Menu</h2>
+</header>
+<!--<div >-->
+    <ul ng-repeat="item in menu">
+        <!--sin hijos-->
+        <li ng-if="item.MenuChilds == false && item.MenuLevel == 0">
+            <a ng-href="{{item.MenuHref}}"><i class={{item.MenuIcon}}></i> {{item.MenuName}}</a>
+        </li>
+        <!--con hijos-->
+        <li ng-if="item.MenuChilds == true && item.MenuLevel == 0">
+            <span class="opener"><i class={{item.MenuIcon}}></i> {{item.MenuName}}</span>
+            <ul ng-repeat="subitem in item.MenuDetails">
+                <li ng-if="subitem.MenuLevel == 1">
+                    <a ng-href="{{subitem.MenuHref}}"><i class={{subitem.MenuIcon}}></i> {{subitem.MenuName}}</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+<!--</div>-->

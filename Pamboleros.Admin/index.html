@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="PambolerosApp">
+<head>
+    <!--<base href="/" />-->
+    <meta charset="UTF-8">
+    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
+    <title>.:: Pamboleros ::.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <meta name="description" content="Administración para el negocio del futbol.">
+    <meta name="author" content="Emmanuel Morales Saavedra">
+
+    <link rel="stylesheet" href="content/assets/css/main.css" />
+    <link rel="stylesheet" href="content/css/loading-bar.css" />
+    <link rel="stylesheet" href="content/css/Login.css" />
+</head>
+<body data-ng-controller="indexController">
+    <div data-ng-view="">
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="content/assets/js/jquery.min.js"></script>
+    <script src="content/assets/js/skel.min.js"></script>
+    <script src="content/assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="content/assets/js/main.js"></script>
+
+
+    <!-- 3rd party libraries -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+    <script src="scripts/angular-local-storage.min.js"></script>
+    <script src="scripts/loading-bar.min.js"></script>
+    <!-- Load app main script -->
+    <script src="app/app.js"></script>
+    <!-- Load services -->
+    <script src="app/services/authInterceptorService.js"></script>
+    <script src="app/services/authService.js"></script>
+    <script src="app/services/menuService.js"></script>
+    <!-- Load controllers -->
+    <script src="app/controllers/indexController.js"></script>
+    <script src="app/controllers/homeController.js"></script>
+    <script src="app/controllers/loginController.js"></script>
+    <script src="app/controllers/signupController.js"></script>
+    <script src="app/controllers/menuController.js"></script>
+</body>
+</html>

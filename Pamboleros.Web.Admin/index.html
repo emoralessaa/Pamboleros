@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="AngularAuthApp">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
+    <title>.:: Pamboleros ::.</title>
+    <link href="content/css/bootstrap.css" rel="stylesheet" />
+    <link href="content/css/site_.css" rel="stylesheet" />
+    <link href="content/css/loading-bar.css" rel="stylesheet" />
+    <link href="content/css/Login.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Administración para el negocio del futbol.">
+    <meta name="author" content="Emmanuel Morales Saavedra">
+</head>
+<body data-ng-controller="indexController">
+    <!--MENU-->
+    <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" role="navigation" data-ng-controller="homeController">
+        <div class="container">
+            <img src="content/img/logoHeader.png" alt="LogoHeader" class="navbar-brand" />
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <nav class="navbar-nav" id="menu" ng-include="menuTemplate.url" >
+                </nav>
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-link" data-ng-hide="!authentication.isAuth"><a href="#">Bienvenido {{authentication.userName}}</a></li>
+                    <li class="nav-link" data-ng-hide="!authentication.isAuth"><a href="#/orders">My Orders</a></li>
+                    <li class="nav-link" data-ng-hide="!authentication.isAuth"><a href="" data-ng-click="logOut()">Salir</a></li>
+                    <li class="nav-link" data-ng-hide="authentication.isAuth"> <a href="#/login">Entrar</a></li>
+                    <li class="nav-link" data-ng-hide="authentication.isAuth"> <a href="#/signup">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--FIN MENU-->
+
+    <div class="containerMain">
+        <div class="page-header" data-ng-view="">
+        </div>
+    </div>
+
+    <script src="content/js/jquery.min.js"></script>
+    <script src="content/js/popper.min.js"></script>
+    <script src="content/js/bootstrap.min.js"></script>
+    <script src="content/js/custom.js"></script>
+
+    <!-- 3rd party libraries -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+    <script src="scripts/angular-local-storage.min.js"></script>
+    <script src="scripts/loading-bar.min.js"></script>
+    <!-- Load app main script -->
+    <script src="app/app.js"></script>
+    <!-- Load services -->
+    <script src="app/services/authInterceptorService.js"></script>
+    <script src="app/services/authService.js"></script>
+    <script src="app/services/menuService.js"></script>
+    <!-- Load controllers -->
+    <script src="app/controllers/indexController.js"></script>
+    <script src="app/controllers/homeController.js"></script>
+    <script src="app/controllers/loginController.js"></script>
+    <script src="app/controllers/signupController.js"></script>
+    <script src="app/controllers/menuController.js"></script>
+</body>
+</html>

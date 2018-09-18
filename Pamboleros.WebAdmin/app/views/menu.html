@@ -1,0 +1,95 @@
+﻿<div>
+    <!-- #menu -->
+    <ul id="menu" class="bg-blue dker">
+        <li class="nav-header">Menu</li>
+        <li class="nav-divider"></li>
+
+        <li class="">
+            <a href="javascript:;">
+                <i class="fa fa-building "></i>
+                <span class="link-title">Layouts</span>
+                <span class="fa arrow"></span>
+            </a>
+            <ul class="collapse">
+                <li>
+                    <a href="boxed.html">
+                        <i class="fa fa-angle-right"></i>&nbsp; Boxed Layout
+                    </a>
+                </li>
+                <li>
+                    <a href="fixed-header-boxed.html">
+                        <i class="fa fa-angle-right"></i>&nbsp; Boxed Layout &amp; Fixed Header
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+
+
+        <li class="" ng-repeat="item in menu">
+            <a href="javascript:;">
+                <!--sin hijos-->
+                <i class={{item.MenuIcon}}></i>
+                <span class="link-title">
+                    {{item.MenuName}}
+                </span>
+                <span class="fa arrow"></span>
+            </a>
+
+            <ul class="collapse">
+                <li>
+                    <a href="boxed.html">
+                        <i class="fa fa-angle-right"></i>&nbsp; Boxed Layout
+                    </a>
+                </li>
+                <li>
+                    <a href="fixed-header-boxed.html">
+                        <i class="fa fa-angle-right"></i>&nbsp; Boxed Layout &amp; Fixed Header
+                    </a>
+                </li>
+            </ul>
+            <!--sin hijos-->
+            <a ng-if="item.MenuChilds == false && item.MenuLevel == 0">
+                <i class={{item.MenuIcon}}></i>
+                <span class="link-title">{{item.MenuName}}</span>
+            </a>
+            <!--con hijos-->
+            <a ng-if="item.MenuChilds == true && item.MenuLevel == 0" href="javascript:;">
+                <i class={{item.MenuIcon}}></i>
+                <span class="link-title">
+                    {{item.MenuName}}
+                </span>
+                <span class="fa arrow"></span>
+            </a>
+            <ul class="collapse">
+                <li ng-repeat="item2 in menu | filter:item.MenuIdRoot">
+                    <a href="form-general.html">
+                        <i class="fa fa-angle-right"></i>&nbsp; Form General
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <!-- /#menu -->
+</div>
+<!--Scripts-->
+<!-- MetisMenu -->
+<script src="content/lib/metismenu/metisMenu.js"></script>
+<!-- Metis core scripts -->
+<script src="content/js/core.js"></script>
+
+<!--<script type="text/javascript">
+    (function ($) {
+        $(document).ready(function () {
+            $('.list-inline li > a').click(function () {
+                var activeForm = $(this).attr('href') + ' > form';
+                //console.log(activeForm);
+                $(activeForm).addClass('animated fadeIn');
+                //set timer to 1 seconds, after that, unload the animate animation
+                setTimeout(function () {
+                    $(activeForm).removeClass('animated fadeIn');
+                }, 1000);
+            });
+        });
+    })(jQuery);
+</script>-->

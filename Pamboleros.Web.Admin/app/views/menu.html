@@ -1,0 +1,13 @@
+﻿    <ul class="navbar-nav" ng-repeat="item in menu" data-ng-hide="!authentication.isAuth">
+        <!--sin hijos-->
+        <li class="nav-item" ng-if="item.MenuChilds == false && item.MenuLevel == 0">
+            <a class="nav-link" ng-href="{{item.MenuHref}}">{{item.MenuName}}</a>
+        </li>
+        <!--con hijos-->
+        <li class="nav-item dropdown" ng-if="item.MenuChilds == true && item.MenuLevel == 0">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="themes">{{item.MenuName}} <span class="caret"></span></a>
+            <div class="dropdown-menu" aria-labelledby="themes">
+                <a ng-repeat="subitem in item.MenuDetails" class="dropdown-item" ng-href="{{subitem.MenuHref}}">{{subitem.MenuName}}</a>
+            </div>
+        </li>
+    </ul>

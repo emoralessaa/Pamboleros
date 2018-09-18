@@ -1,0 +1,25 @@
+﻿<div class="logo">
+    <img src="content/img/logoLogin.png" class="logo" />
+</div>
+<div class="login-page" data-ng-controller="loginController">
+    <div class="form">
+        <h1 class="h1">Iniciar sesión</h1>
+        <form class="login-form" runat="server">
+            <p class="text-muted text-center">
+                Ingresa tu nombre de usuario y contraseña
+            </p>
+            <input type="text" class="form-control top" placeholder="Nombre de usuario" data-ng-model="loginData.userName" required autofocus>
+            <input type="password" class="form-control bottom" placeholder="Contraseña" data-ng-model="loginData.password" required>
+            <!--<div class="checkbox">
+                <label>
+                    <input type="checkbox"> Recordar
+                </label>
+            </div>-->
+            <button class="btn-login btn-lg-login btn-primary-login btn-block-login" type="submit" data-ng-click="login()">Login</button>
+            <button class="btn-login btn-lg-login btn-primary-login btn-block-login labelButton" type="submit" data-ng-click="forgot()">¿Olvidaste tu contraseña?</button>
+        </form>
+        <div data-ng-hide="message == ''" class="errorBox">
+            {{message}}
+        </div>
+    </div>
+</div>
